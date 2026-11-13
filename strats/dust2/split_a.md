@@ -43,6 +43,20 @@ Trois joueurs prennent Long, deux passent par Short, puis entrée synchronisée 
   - **Avant l’action**: aucun utilitaire obligatoire ; gardez une flash pour le premier désamorçage.
   - **Consigne**: pas de peek isolé : jouez le contact sur la bombe et les trades.
 
+```mermaid
+flowchart LR
+    T["T Spawn"] --> L["Long"]
+    T --> LT["Lower Tunnels"]
+    LT --> S["Short / Catwalk"]
+    L -->|EL + SL| A["Site A"]
+    S -->|ES + SS| A
+    L -->|LL : contrôle / retard| AL["Portes A"]
+    AL --> A
+    A --> P["Bombe : plant Long"]
+    CT["CT Spawn"] -. "smoke" .-> A
+    G["Goose"] -. "molotov" .-> A
+```
+
 ## Plan B
 
 Si Long est bloqué par une molotov, une AWP ou deux défenseurs avant 0:12, les trois joueurs Long reviennent immédiatement vers Upper Tunnels.
